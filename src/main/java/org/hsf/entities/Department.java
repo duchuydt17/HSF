@@ -3,6 +3,8 @@ package org.hsf.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "departments")
 @NoArgsConstructor@AllArgsConstructor
@@ -19,4 +21,7 @@ public class Department extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
+    @OneToMany(mappedBy = "department")
+    private Set<Job> jobs;
 }

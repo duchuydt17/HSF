@@ -10,6 +10,7 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor@AllArgsConstructor
 @Getter@Setter
 @ToString
+@Builder
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +42,7 @@ public class Job {
 
     private OffsetDateTime deadline;
 
-    private OffsetDateTime published_at;
+    private OffsetDateTime publishedAt;
 
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
