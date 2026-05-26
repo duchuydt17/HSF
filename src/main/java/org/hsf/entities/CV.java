@@ -1,11 +1,15 @@
 package org.hsf.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "cvs")
+@NoArgsConstructor@AllArgsConstructor
+@Getter@Setter
+@ToString
 public class CV extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
