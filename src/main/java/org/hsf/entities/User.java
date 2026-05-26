@@ -45,4 +45,7 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
+
+    @OneToMany(mappedBy = "user")
+    private Set<InterviewInterviewer> interviewInterviewers;
 }

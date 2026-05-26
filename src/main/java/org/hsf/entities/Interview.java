@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "interviews")
@@ -54,4 +55,7 @@ public class Interview extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "interview_template_id", referencedColumnName = "id")
     private InterviewTemplate interviewTemplate;
+
+    @OneToMany(mappedBy = "interview")
+    private Set<InterviewInterviewer> interviewInterviewers;
 }
