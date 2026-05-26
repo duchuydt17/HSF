@@ -5,10 +5,8 @@ import lombok.*;
 
 @Entity
 @Table(name = "evaluation_notes")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@NoArgsConstructor@AllArgsConstructor
+@Getter@Setter
 @ToString
 public class EvaluationNote extends BaseEntity {
     @Id

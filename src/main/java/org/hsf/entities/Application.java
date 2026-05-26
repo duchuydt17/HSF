@@ -41,4 +41,7 @@ public class Application extends BaseEntity {
 
     @OneToOne(mappedBy = "candidate")
     private EvaluationNote evaluationNote;
+
+    @OneToOne(mappedBy = "candidate")
+    private ActionableEmailToken actionableEmailToken;
 }
