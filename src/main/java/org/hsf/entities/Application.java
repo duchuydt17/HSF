@@ -54,4 +54,7 @@ public class Application extends BaseEntity {
 
     @OneToOne(mappedBy = "application")
     private EvaluationNote evaluationNote;
+
+    @OneToOne(mappedBy = "application")
+    private Interview interview;
 }
