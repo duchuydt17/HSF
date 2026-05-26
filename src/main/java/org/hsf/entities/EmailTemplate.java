@@ -3,6 +3,8 @@ package org.hsf.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "email_templates")
 @NoArgsConstructor
@@ -32,4 +34,7 @@ public class EmailTemplate extends BaseEntity {
 
     @Column(name = "is_active")
     private Boolean isActive;
+
+    @OneToMany(mappedBy = "emailTemplate")
+    private Set<EmailLog> emailLogs;
 }
