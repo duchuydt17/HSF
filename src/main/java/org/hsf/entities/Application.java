@@ -39,5 +39,6 @@ public class Application extends BaseEntity {
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     private Department department;
 
-
+    @OneToOne(mappedBy = "candidate")
+    private EvaluationNote evaluationNote;
 }
