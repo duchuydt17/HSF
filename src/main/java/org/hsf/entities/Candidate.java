@@ -56,4 +56,10 @@ public class Candidate extends BaseEntity {
 
     @OneToMany(mappedBy = "candidate")
     private Set<CandidateSkill> candidateSkills;
+
+    @OneToOne(mappedBy = "candidate")
+    private CV cv;
+
+    @OneToOne(mappedBy = "candidate")
+    private Set<Application> applications;
 }

@@ -55,4 +55,7 @@ public class Job {
 
     @OneToMany(mappedBy = "job")
     private Set<JobSkill> jobSkills;
+
+    @OneToMany(mappedBy = "job")
+    private Set<Application> applications;
 }

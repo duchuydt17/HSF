@@ -29,4 +29,11 @@ public class CV extends BaseEntity {
 
     @Column(name = "uploaded_at")
     private OffsetDateTime uploadedAt;
+
+    @OneToOne
+    @JoinColumn(name = "candidate_id", referencedColumnName = "id")
+    private Candidate candidate;
+
+    @OneToOne(mappedBy = "cv")
+    private Application application;
 }
