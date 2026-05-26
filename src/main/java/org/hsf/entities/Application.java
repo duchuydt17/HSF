@@ -4,13 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "applications")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@NoArgsConstructor@AllArgsConstructor
+@Getter@Setter
 @ToString
 public class Application extends BaseEntity {
     @Id
@@ -39,9 +38,12 @@ public class Application extends BaseEntity {
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     private Department department;
 
-    @OneToOne(mappedBy = "candidate")
+    @OneToOne(mappedBy = "application")
     private EvaluationNote evaluationNote;
 
-    @OneToOne(mappedBy = "candidate")
+    @OneToOne(mappedBy = "application")
     private ActionableEmailToken actionableEmailToken;
+
+    @OneToMany(mappedBy = "application")
+    private Set<StageTransition> stageTransitions;
 }
