@@ -47,4 +47,8 @@ public class Job {
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     private Department department;
+
+    @ManyToOne
+    @JoinColumn(name = "recruiter_id", referencedColumnName = "id")
+    private User user;
 }

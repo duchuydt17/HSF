@@ -24,4 +24,7 @@ public class Department extends BaseEntity {
 
     @OneToMany(mappedBy = "department")
     private Set<Job> jobs;
+
+    @OneToMany(mappedBy = "department")
+    private Set<User> users;
 }
