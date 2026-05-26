@@ -42,4 +42,7 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "user")
     private Set<Job> jobs;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Notification> notifications;
 }
