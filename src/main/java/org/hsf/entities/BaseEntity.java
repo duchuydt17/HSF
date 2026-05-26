@@ -19,8 +19,8 @@ public class BaseEntity {
     private LocalDateTime deleted_at;
     @Column(name = "is_deleted")
     private Boolean isDeleted;
-    @Column(name = "created_by")
+    @Column(name = "created_by", columnDefinition = "VARCHAR(255)")
     private String createdBy;
-    @Column(name = "updated_by")
+    @Column(name = "updated_by", columnDefinition = "VARCHAR(255)")
     private String updatedBy;
 }
