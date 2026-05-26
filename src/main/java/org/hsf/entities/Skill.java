@@ -23,4 +23,7 @@ public class Skill extends BaseEntity {
 
     @OneToMany(mappedBy = "skill")
     private Set<JobSkill> jobSkills;
+
+    @OneToMany(mappedBy = "skill")
+    private Set<CandidateSkill> candidateSkills;
 }
