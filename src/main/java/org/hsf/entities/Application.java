@@ -38,12 +38,20 @@ public class Application extends BaseEntity {
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     private Department department;
 
-    @OneToOne(mappedBy = "application")
-    private EvaluationNote evaluationNote;
+    @OneToOne
+    @JoinColumn(name = "transferred_from", referencedColumnName = "id")
+    private PipelineStage transferredFrom;
+
+    @OneToOne
+    @JoinColumn(name = "pipeline_stage_id", referencedColumnName = "id")
+    private PipelineStage pipelineStageId;
 
     @OneToOne(mappedBy = "application")
     private ActionableEmailToken actionableEmailToken;
 
     @OneToMany(mappedBy = "application")
     private Set<StageTransition> stageTransitions;
+
+    @OneToOne(mappedBy = "application")
+    private EvaluationNote evaluationNote;
 }

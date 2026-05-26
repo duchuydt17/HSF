@@ -32,4 +32,10 @@ public class PipelineStage extends BaseEntity {
 
     @OneToMany(mappedBy = "toStage")
     private Set<StageTransition> toStages;
+
+    @OneToOne(mappedBy = "transferredFrom")
+    private Application application;
+
+    @OneToOne(mappedBy = "pipelineStageId")
+    private PipelineStage pipelineStage;
 }
