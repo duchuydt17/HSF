@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "jobs")
@@ -51,4 +52,7 @@ public class Job {
     @ManyToOne
     @JoinColumn(name = "recruiter_id", referencedColumnName = "id")
     private User user;
+
+    @OneToMany(mappedBy = "job")
+    private Set<JobSkill> jobSkills;
 }

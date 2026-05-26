@@ -3,6 +3,8 @@ package org.hsf.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "skills")
 @NoArgsConstructor@AllArgsConstructor
@@ -18,4 +20,7 @@ public class Skill extends BaseEntity {
 
     @Column(columnDefinition = "VARCHAR(150)")
     private String category;
+
+    @OneToMany(mappedBy = "skill")
+    private Set<JobSkill> jobSkills;
 }
